@@ -11,15 +11,17 @@ export default function App() {
       id: 1,
       title: "UN Association of Korea",
       category: "Various event videos",
-      description: "각종 행사 영상 제작.",
-      thumbnail: "https://i.ibb.co/CKFHSXnh/t1.jpg ",
+      description: "kiki",
+      thumbnail: process.env.PUBLIC_URL + "/img/kiki.png",
+      link: "https://www.youtube.com"
     },
     {
       id: 2,
       title: "Korean Bar Association",
       category: "Youtube Contents",
       description: "Create diverse content formats",
-      thumbnail: "https://i.ibb.co/mrmyCyZk/t2.webp ",
+      thumbnail: "https://i.ibb.co/V0dbhX99/image.png",
+      link: "https://www.youtube.com/@KR_lawyer"
     },
     {
       id: 3,
@@ -27,6 +29,7 @@ export default function App() {
       category: "Shorts Video",
       description: "Highlight video from upload",
       thumbnail: "https://i.ibb.co/FLPYvWSZ/t4.jpg ",
+      link: "https://www.youtube.com/@cgn/shorts"
     },
     {
       id: 4,
@@ -34,6 +37,7 @@ export default function App() {
       category: "Viral Contents",
       description: "Make eye-catching content",
       thumbnail: "https://i.ibb.co/WpGsZ8MW/t5.png ",
+      link: "https://www.instagram.com/elchoice.official/reels/"
     },
     {
       id: 5,
@@ -41,6 +45,7 @@ export default function App() {
       category: "Fashion Film",
       description: "Styled fashion concept film",
       thumbnail: "https://i.ibb.co/tT1nCkLQ/T7-png.webp ",
+      link: "https://www.youtube.com"
     },
     {
       id: 6,
@@ -48,7 +53,9 @@ export default function App() {
       category: "Advertisement",
       description: "Eye-catching promotional video",
       thumbnail: "https://i.ibb.co/zTScVgjY/T6.webp ",
+      link: "https://www.youtube.com"
     },
+
   ];
 
   useEffect(() => {
@@ -160,15 +167,17 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioItems.map((item) => (
               <div key={item.id} className="group overflow-hidden rounded-xl bg-gray-900/50 backdrop-blur-sm border border-gray-800 hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-2">
-                <div className="relative overflow-hidden h-64">
-                  <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-4 w-full">
-                      <span className="text-xs uppercase tracking-wider text-purple-400">{item.category}</span>
-                      <h3 className="font-semibold text-lg">{item.title}</h3>
-                    </div>
+                <a href={item.link} target="_blank" rel="noopener noreferrer" className="relative overflow-hidden h-64 block rounded-t-xl">
+                  <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 w-full">
+                    <span className="text-xs uppercase tracking-wider text-purple-400">
+                      {item.category}
+                    </span>
+                    <h3 className="font-semibold text-lg">{item.title}</h3>
                   </div>
                 </div>
+                </a>
                 <div className="p-5">
                   <p className="text-gray-400 text-sm line-clamp-3">{item.description}</p>
                 </div>
