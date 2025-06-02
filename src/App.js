@@ -28,7 +28,7 @@ export default function App() {
       title: "YouTube Series",
       category: "LS ELECTRIC",
       description: "공식 유튜브 콘텐츠 제작",
-      thumbnail: process.env.PUBLIC_URL + "/img/LS.PNG",
+      thumbnail: process.env.PUBLIC_URL + "/img/LS.png",
       link: "https://www.youtube.com/@LSELECTRIC/featured"
     },
 {
