@@ -9,51 +9,59 @@ export default function App() {
   const portfolioItems = [
     {
       id: 1,
-      title: "UN Association of Korea",
-      category: "Various event videos",
-      description: "kiki",
-      thumbnail: process.env.PUBLIC_URL + "/img/kiki.png",
+      title: "Client Project",
+      category: "UN Association of Korea",
+      description: "공식 행사 영상 제작",
+      thumbnail: process.env.PUBLIC_URL + "/img/UN.png",
       link: "https://www.youtube.com"
     },
     {
       id: 2,
-      title: "Korean Bar Association",
-      category: "Youtube Contents",
-      description: "Create diverse content formats",
-      thumbnail: "https://i.ibb.co/V0dbhX99/image.png",
+      title: "YouTube Series",
+      category: "Korean Bar Association",
+      description: "공식 유튜브 콘텐츠 제작",
+      thumbnail: process.env.PUBLIC_URL + "/img/대변협.png",
       link: "https://www.youtube.com/@KR_lawyer"
     },
     {
       id: 3,
-      title: "CGN",
-      category: "Shorts Video",
-      description: "Highlight video from upload",
-      thumbnail: "https://i.ibb.co/FLPYvWSZ/t4.jpg ",
+      title: "YouTube Series",
+      category: "LS ELECTRIC",
+      description: "공식 유튜브 콘텐츠 제작",
+      thumbnail: process.env.PUBLIC_URL + "/img/LS.PNG",
+      link: "https://www.youtube.com/@LSELECTRIC/featured"
+    },
+{
+      id: 4,
+      title: "YouTube Shorts Series",
+      category: "CGN",
+      description: "유튜브 쇼츠 콘텐츠 제작",
+      thumbnail: process.env.PUBLIC_URL + "/img/CGN.jpg",
       link: "https://www.youtube.com/@cgn/shorts"
     },
     {
-      id: 4,
-      title: "Elchoice",
-      category: "Viral Contents",
-      description: "Make eye-catching content",
-      thumbnail: "https://i.ibb.co/WpGsZ8MW/t5.png ",
+      id: 5,
+      title: "Instagram reels",
+      category: "Elchoice",
+      description: "인스타그램 바이럴 콘텐츠 제작",
+      thumbnail: process.env.PUBLIC_URL + "/img/elchoice.png",
       link: "https://www.instagram.com/elchoice.official/reels/"
     },
     {
-      id: 5,
-      title: "Nautica",
-      category: "Fashion Film",
-      description: "Styled fashion concept film",
-      thumbnail: "https://i.ibb.co/tT1nCkLQ/T7-png.webp ",
-      link: "https://www.youtube.com"
+      id: 6,
+      title: "Fashion Film",
+      category: "Nautica",
+      description: "패션 필름 제작",
+      thumbnail: process.env.PUBLIC_URL + "/img/nautica.png",
+      link: "https://youtu.be/YqHbDnfxbYA"
     },
     {
-      id: 6,
-      title: "Wisely",
-      category: "Advertisement",
-      description: "Eye-catching promotional video",
-      thumbnail: "https://i.ibb.co/zTScVgjY/T6.webp ",
-      link: "https://www.youtube.com"
+      id: 7,
+      title: "Advertisement",
+      category: "Wisely",
+      description: "광고 영상 제작",
+      thumbnail: process.env.PUBLIC_URL + "/img/wisely.png",
+      link: "https://youtu.be/lYzGUOhlMK8"
     },
 
   ];
@@ -133,12 +141,13 @@ export default function App() {
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              SNS, 광고, 홍보 콘텐츠를
+              기획부터 제작까지
               <br />
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">제작하는 930Studio</span>
+              <span className="bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">브랜드 맞춤형 콘텐츠를 완성하는 930Studio</span>
             </h2>
             <p className="text-gray-300 text-lg mb-8 max-w-lg">
-              📸브랜드의 분위기를 영상으로🎞기획, 촬영, 편집까지 제가 직접 만듭니다🌿 감성 + 디테일, 모두 담아낼게요
+              SNS, 광고, 홍보 영상에 최적화된 기획·촬영·편집을 직접 진행합니다.<br />
+              감성과 완성도를 모두 담은 콘텐츠를 만듭니다.
             </p>
             <div className="flex gap-4">
               <a href="#portfolio" className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-full font-medium transition-colors inline-block">포트폴리오 보기</a>
