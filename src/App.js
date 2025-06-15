@@ -63,6 +63,16 @@ export default function App() {
       thumbnail: process.env.PUBLIC_URL + "/img/wisely.png",
       link: "https://youtu.be/lYzGUOhlMK8"
     },
+    {
+      id: 8,
+      title: "Advertisement",
+      category: "Quiznos",
+      description: "광고 영상 제작",
+      thumbnail: process.env.PUBLIC_URL + "/img/quiznos.png",
+      link: "https://youtu.be/yB-eAm-cd30?si=39yd9kfHu6pxirUb"
+    },
+
+
 
   ];
 
