@@ -9,9 +9,12 @@ export default function App() {
   const portfolioItems = [
     {
       id: 1,
-      title: "Client Project",
+      title: "Event Highlights Video",
       category: "UN Association of Korea",
-      description: "공식 행사 영상 제작",
+      project: "2025 공식 행사 영상",
+      role: "Editing",
+      contribution: "행사 전반을 아우르는 하이라이트 영상 편집 담당.\n 구성 및 스토리라인 편집 중심 참여",
+      context: "930Studio project",
       thumbnail: process.env.PUBLIC_URL + "/img/UN.png",
       link: "https://www.youtube.com"
     },
@@ -19,15 +22,21 @@ export default function App() {
       id: 2,
       title: "YouTube Series",
       category: "Korean Bar Association",
-      description: "공식 유튜브 콘텐츠 제작",
+      project: "공식 유튜브 콘텐츠 시리즈",
+      role: "Planning / Filming / Editing",
+      contribution: "다양한 콘텐츠의 흐름 정리와 몰입도 높은 컷 편집, 자막·그래픽 연출 담당",
+      context: "Participated during employment at VV(23.08 ~ 25.01)",
       thumbnail: process.env.PUBLIC_URL + "/img/대변협.png",
       link: "https://www.youtube.com/@KR_lawyer"
     },
     {
       id: 3,
-      title: "YouTube Series",
+      title: "YouTube Original Series",
       category: "LS ELECTRIC",
-      description: "공식 유튜브 콘텐츠 제작",
+      project: "브랜드 공식 유튜브 콘텐츠",
+      role: "Planning / Filming / Editing",
+      contribution: "콘텐츠 기획, 현장 촬영, 편집까지 전체 제작 과정에 폭넓게 참여",
+      context: "Participated during employment at VV (24.01 ~ 25.01)",
       thumbnail: process.env.PUBLIC_URL + "/img/LS.png",
       link: "https://www.youtube.com/@LSELECTRIC/featured"
     },
@@ -35,15 +44,21 @@ export default function App() {
       id: 4,
       title: "YouTube Shorts Series",
       category: "CGN",
-      description: "유튜브 쇼츠 콘텐츠 제작",
+      project: "유튜브 쇼츠 콘텐츠 제작",
+      role: "Editing",
+      contribution: "쇼츠 포맷에 맞춘 속도감 있는 컷 구성과 자막·그래픽 요소 편집을 통해 메시지 전달력을 극대화",
+      context: "Independently produced project",
       thumbnail: process.env.PUBLIC_URL + "/img/CGN.jpg",
       link: "https://www.youtube.com/@cgn/shorts"
     },
     {
       id: 5,
-      title: "Instagram reels",
+      title: "Instagram Reels Series",
       category: "Elchoice",
-      description: "인스타그램 바이럴 콘텐츠 제작",
+      project: "인스타그램 바이럴 콘텐츠",
+      role: "Editing",
+      contribution: "트렌드에 맞춘 숏폼 영상 편집과 자막·그래픽 연출을 통해 브랜드 노출과 유입 극대화",
+      context: "Independently produced project",
       thumbnail: process.env.PUBLIC_URL + "/img/elchoice.png",
       link: "https://www.instagram.com/elchoice.official/reels/"
     },
@@ -51,7 +66,10 @@ export default function App() {
       id: 6,
       title: "Fashion Film",
       category: "Nautica",
-      description: "패션 필름 제작",
+      project: "패션 필름 제작",
+      role: "Filming / Editing",
+      contribution: "브랜드 감성을 살린 촬영 및 영상 편집 전반을 단독 진행",
+      context: "Independently produced project",
       thumbnail: process.env.PUBLIC_URL + "/img/nautica.png",
       link: "https://youtu.be/YqHbDnfxbYA"
     },
@@ -59,7 +77,10 @@ export default function App() {
       id: 7,
       title: "Advertisement",
       category: "Wisely",
-      description: "광고 영상 제작",
+      project: "광고 영상 제작",
+      role: "Planning / Filming / Editing",
+      contribution: "브랜드 캠페인 영상의 기획부터 촬영, 편집까지 전 과정 단독 수행",
+      context: "Independently produced project",
       thumbnail: process.env.PUBLIC_URL + "/img/wisely.png",
       link: "https://youtu.be/lYzGUOhlMK8"
     },
@@ -67,7 +88,10 @@ export default function App() {
       id: 8,
       title: "Advertisement",
       category: "Quiznos",
-      description: "광고 영상 제작",
+      project: "광고 영상 제작",
+      role: "Planning / Filming / Editing",
+      contribution: "제품 중심의 광고 영상을 단독으로 기획, 촬영, 편집하여 브랜드 메시지를 효과적으로 전달",
+      context: "Independently produced project",
       thumbnail: process.env.PUBLIC_URL + "/img/quiznos.png",
       link: "https://youtu.be/yB-eAm-cd30?si=39yd9kfHu6pxirUb"
     },
@@ -197,9 +221,11 @@ export default function App() {
                   </div>
                 </div>
                 </a>
-                <div className="p-5">
-                  <p className="text-gray-400 text-sm line-clamp-3">{item.description}</p>
-                </div>
+                <div className="p-5 space-y-2 text-sm text-gray-300">
+  			<p className="text-purple-400 text-xs font-semibold">{item.project}</p>
+  			<p className="text-gray-400">{item.contribution}</p>
+  			<p className="text-gray-500 text-xs">{item.role} · {item.context}</p>
+		</div>
               </div>
             ))}
           </div>
