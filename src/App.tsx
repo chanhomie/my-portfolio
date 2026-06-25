@@ -446,7 +446,7 @@ function HeroSection() {
 
       <div className="relative z-0 mt-6 w-full overflow-hidden sm:mt-4 md:-mt-5">
         <FadeIn delay={0.15} y={40}>
-          <h1 className="hero-heading w-full whitespace-nowrap text-[12vw] font-black uppercase leading-none tracking-tight sm:text-[13vw] md:text-[14vw] lg:text-[15.5vw]">
+          <h1 className="hero-heading w-full whitespace-nowrap text-center text-[12vw] font-black uppercase leading-none tracking-tight sm:text-left sm:text-[13vw] md:text-[14vw] lg:text-[15.5vw]">
             930Studio
           </h1>
         </FadeIn>
@@ -547,7 +547,7 @@ function MarqueeRow({
 
   return (
     <div
-      className="mb-3 flex gap-3 last:mb-0"
+      className="mb-2 flex gap-2 last:mb-0 sm:mb-3 sm:gap-3"
       style={{ transform, willChange: "transform" }}
     >
       {tripledImages.map((image, index) => {
@@ -558,8 +558,8 @@ function MarqueeRow({
             ? { aspectRatio: `${image.width} / ${image.height}` }
             : undefined;
         const ratioImageClass = image.cropLetterbox
-          ? "h-[270px] w-[480px] max-w-none flex-none rounded-2xl bg-black object-cover object-center"
-          : "h-[270px] w-auto max-w-none flex-none rounded-2xl bg-black object-contain";
+          ? "h-[118px] w-[210px] max-w-none flex-none rounded-xl bg-black object-cover object-center sm:h-[210px] sm:w-[373px] sm:rounded-2xl md:h-[270px] md:w-[480px]"
+          : "h-[118px] w-auto max-w-none flex-none rounded-xl bg-black object-contain sm:h-[210px] sm:rounded-2xl md:h-[270px]";
 
         return (
           <img
@@ -689,12 +689,12 @@ function ClientLogoRow({
 
   return (
     <div
-      className="mb-3 flex gap-3 last:mb-0"
+      className="mb-2 flex gap-2 last:mb-0 sm:mb-3 sm:gap-3"
       style={{ transform, willChange: "transform" }}
     >
       {repeatedLogos.map((logo, index) => (
         <div
-          className={`flex h-[120px] min-w-[280px] flex-none items-center justify-center rounded-2xl border px-7 text-center shadow-[0_20px_70px_rgba(0,87,184,0.1)] backdrop-blur sm:h-[140px] sm:min-w-[340px] sm:px-9 md:h-[160px] md:min-w-[420px] md:px-12 ${
+          className={`flex h-[82px] w-[178px] flex-none items-center justify-center rounded-xl border px-5 text-center shadow-[0_20px_70px_rgba(0,87,184,0.1)] backdrop-blur sm:h-[140px] sm:w-[340px] sm:rounded-2xl sm:px-9 md:h-[160px] md:w-[420px] md:px-12 ${
             logo.theme === "dark"
               ? "border-[#D7E2EA]/15 bg-[#111820]/85"
               : "border-white/10 bg-[#F7FAF4]"
@@ -703,7 +703,7 @@ function ClientLogoRow({
         >
           <img
             alt={logo.alt}
-            className="max-h-[58px] w-auto max-w-[86%] object-contain sm:max-h-[72px] md:max-h-[92px]"
+            className="max-h-[38px] w-auto max-w-[86%] object-contain sm:max-h-[72px] md:max-h-[92px]"
             loading="lazy"
             src={logo.src}
           />
