@@ -1,14 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="14" fill="#0057B8"/>
   <path d="M0 50h64v14H0z" fill="#FFD400"/>
-  <text
-    x="32"
-    y="38"
-    fill="#FFFFFF"
-    font-family="Kanit, Arial Black, Arial, sans-serif"
-    font-size="24"
-    font-weight="900"
-    letter-spacing="-1"
-    text-anchor="middle"
-  >930</text>
+  <rect x="13" y="24" width="34" height="24" rx="6" fill="#FFFFFF"/>
+  <rect x="20" y="18" width="17" height="8" rx="4" fill="#FFFFFF"/>
+  <path d="M47 29l9-5v24l-9-5z" fill="#F25F3A"/>
+  <circle cx="30" cy="36" r="10" fill="#0C0C0C"/>
+  <circle cx="30" cy="36" r="5" fill="#FFD400"/>
+  <circle cx="42" cy="30" r="2.4" fill="#0C0C0C"/>
 </svg>
