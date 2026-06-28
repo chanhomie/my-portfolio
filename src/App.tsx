@@ -5,7 +5,7 @@ import {
   type MotionStyle,
   type MotionValue,
 } from "framer-motion";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Mail, MessageCircle } from "lucide-react";
 import {
   useEffect,
   useMemo,
@@ -44,6 +44,7 @@ import workPublic01 from "./assets/work-public-01.png";
 import workPublic02 from "./assets/work-public-02.png";
 
 const contactHref = "mailto:info@930studio.co.kr";
+const kakaoHref = "";
 const studioUrl = "https://930studio.co.kr";
 
 type MarqueeImage = {
@@ -308,24 +309,95 @@ function Magnet({
   );
 }
 
-function ContactButton({ className = "" }: { className?: string }) {
+type ContactButtonProps = {
+  disabled?: boolean;
+  href?: string;
+  icon: ReactNode;
+  label: string;
+  variant: "email" | "kakao";
+};
+
+function ContactButton({
+  disabled = false,
+  href,
+  icon,
+  label,
+  variant,
+}: ContactButtonProps) {
+  const baseClass =
+    "group inline-flex min-h-[50px] shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-8 py-3.5 text-[0.72rem] font-semibold uppercase tracking-widest transition duration-200 sm:min-h-[56px] sm:px-10 sm:py-4 sm:text-sm md:min-h-[62px] md:px-12 md:py-[1.05rem] md:text-base";
+  const variantClass =
+    variant === "email"
+      ? "text-white outline outline-2 outline-offset-[-3px] outline-white hover:brightness-110"
+      : "border-2 border-[#FEE500] bg-[#FEE500] text-[#191919] shadow-[0_12px_34px_rgba(254,229,0,0.2)] hover:bg-[#ffe933]";
+  const content = (
+    <>
+      <span aria-hidden="true" className="flex h-4 w-4 items-center justify-center sm:h-5 sm:w-5">
+        {icon}
+      </span>
+      <span className="whitespace-nowrap">{label}</span>
+      {variant === "email" ? (
+        <ArrowUpRight
+          aria-hidden="true"
+          className="hidden h-4 w-4 transition duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:block sm:h-5 sm:w-5"
+        />
+      ) : null}
+    </>
+  );
+
+  if (disabled || !href) {
+    return (
+      <button
+        aria-label={`${label} link coming soon`}
+        className={`${baseClass} ${variantClass} cursor-default opacity-95`}
+        disabled
+        title="카카오톡 링크 준비 중"
+        type="button"
+      >
+        {content}
+      </button>
+    );
+  }
+
   return (
     <a
-      className={`group inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-7 py-3 text-xs font-medium uppercase tracking-widest text-white outline outline-2 outline-offset-[-3px] outline-white transition duration-200 hover:brightness-110 sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base ${className}`}
-      href={contactHref}
-      style={{
-        background:
-          "linear-gradient(123deg, #031B52 7%, #0057B8 38%, #F25F3A 72%, #FFD400 100%)",
-        boxShadow:
-          "0px 4px 4px rgba(0, 87, 184, 0.25), 4px 4px 12px rgba(255, 212, 0, 0.28) inset",
-      }}
+      className={`${baseClass} ${variantClass}`}
+      href={href}
+      rel={href.startsWith("http") ? "noreferrer" : undefined}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      style={
+        variant === "email"
+          ? {
+              background:
+                "linear-gradient(123deg, #031B52 7%, #0057B8 38%, #F25F3A 72%, #FFD400 100%)",
+              boxShadow:
+                "0px 4px 4px rgba(0, 87, 184, 0.25), 4px 4px 12px rgba(255, 212, 0, 0.28) inset",
+            }
+          : undefined
+      }
     >
-      <span className="whitespace-nowrap">Contact Us</span>
-      <ArrowUpRight
-        aria-hidden="true"
-        className="hidden h-4 w-4 transition duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:block sm:h-5 sm:w-5"
-      />
+      {content}
     </a>
+  );
+}
+
+function ContactButtons({ className = "" }: { className?: string }) {
+  return (
+    <div className={`flex w-full flex-col items-stretch gap-2 sm:w-auto sm:flex-row sm:items-center sm:gap-3 ${className}`}>
+      <ContactButton
+        href={contactHref}
+        icon={<Mail className="h-4 w-4 sm:h-5 sm:w-5" />}
+        label="CONTACT E-mail"
+        variant="email"
+      />
+      <ContactButton
+        disabled={!kakaoHref}
+        href={kakaoHref}
+        icon={<MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />}
+        label="CONTACT KAKAO"
+        variant="kakao"
+      />
+    </div>
   );
 }
 
@@ -474,14 +546,14 @@ function HeroSection() {
         </FadeIn>
       </div>
 
-      <div className="relative z-20 mt-auto flex items-end justify-between gap-4 px-6 pb-7 sm:gap-8 sm:pb-8 md:px-10 md:pb-10">
+      <div className="relative z-20 mt-auto flex flex-col items-center justify-end gap-5 px-6 pb-7 text-center sm:flex-row sm:items-end sm:justify-between sm:gap-8 sm:pb-8 sm:text-left md:px-10 md:pb-10">
         <FadeIn delay={0.35} y={20}>
           <p className="max-w-[170px] break-keep whitespace-nowrap text-[clamp(0.72rem,1.25vw,1.35rem)] font-normal uppercase leading-snug tracking-wide text-[#D7E2EA]/85 sm:max-w-[360px] md:max-w-[460px]">
             필요한 메시지를 결과로 만듭니다.
           </p>
         </FadeIn>
-        <FadeIn delay={0.5} y={20}>
-          <ContactButton />
+        <FadeIn className="w-full max-w-[360px] sm:w-auto sm:max-w-none" delay={0.5} y={20}>
+          <ContactButtons />
         </FadeIn>
       </div>
     </section>
@@ -621,8 +693,8 @@ function AboutSection() {
           </FadeIn>
           <AnimatedText text="930스튜디오는 KOBACO에서 시작한 콘텐츠 크리에이티브 팀입니다. 기관과 기업의 메시지를 정확히 정리하고, 촬영부터 편집까지 제작자가 직접 소통하며 신뢰도 높은 결과물을 만듭니다." />
         </div>
-        <FadeIn className="mt-16 sm:mt-20 md:mt-24" delay={0.25} y={20}>
-          <ContactButton />
+        <FadeIn className="mt-16 w-full max-w-[360px] sm:mt-20 sm:max-w-none md:mt-24" delay={0.25} y={20}>
+          <ContactButtons />
         </FadeIn>
       </div>
     </section>
