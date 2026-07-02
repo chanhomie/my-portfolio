@@ -164,19 +164,19 @@ const projects = [
     number: "01",
     name: "Public Communication",
     category: "Government",
-    images: [workPublic01, workPublic02, workPublic01],
+    images: [thumbnail7Cropped, workPublic02, workPublic01],
   },
   {
     number: "02",
     name: "Brand Focus Stories",
     category: "Branded",
-    images: [workBrand01, workBrand02, workBrand03],
+    images: [bottomUrhey, thumbnail9, workBrand01],
   },
   {
     number: "03",
     name: "Channel Momentum",
     category: "YouTube",
-    images: [workChannel01, workChannel02, workChannel03],
+    images: [workChannel02, thumbnail5, thumbnail6],
   },
 ];
 
@@ -693,7 +693,7 @@ function AboutSection() {
           </FadeIn>
           <AnimatedText text="930스튜디오는 KOBACO에서 시작한 콘텐츠 크리에이티브 팀입니다. 기관과 기업의 메시지를 정확히 정리하고, 촬영부터 편집까지 제작자가 직접 소통하며 신뢰도 높은 결과물을 만듭니다." />
         </div>
-        <FadeIn className="mt-16 w-full max-w-[360px] sm:mt-20 sm:max-w-none md:mt-24" delay={0.25} y={20}>
+        <FadeIn className="mt-9 w-full max-w-[360px] sm:mt-11 sm:max-w-none md:mt-12" delay={0.25} y={20}>
           <ContactButtons />
         </FadeIn>
       </div>
